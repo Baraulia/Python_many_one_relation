@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for book in books %}
+{{book.name}} <br>
+{{book.desc.description}}<br>
+{% for im in book.desc.image.all %}<br>
+<img src="{{ im.image.url }}" alt="">
+{% endfor %}
+{{ book.author.all|join:', ' }}
+
+<br><br>
+{{ book.ganre.all|join:', ' }}
+
+<br><br>
+{% endfor %}
+
+
+</body>
+</html>
